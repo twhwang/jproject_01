@@ -1,0 +1,29 @@
+@charset "utf-8";
+@font-face {
+    font-family: '에스코어드림L';
+    src: url('fonts/scdream3.woff2') format('woff2'),
+         url('fonts/scdream3.woff') format('woff');
+}
+@font-face {
+    font-family: '에스코어드림R';
+    src: url('fonts/scdream4.woff2') format('woff2'),
+         url('fonts/scdream4.woff') format('woff');
+}
+@font-face {
+    font-family: '에스코어드림B';
+    src: url('fonts/scdream8.woff2') format('woff2'),
+         url('fonts/scdream8.woff') format('woff');
+}
+@font-face {
+    font-family: '조선명조';
+    src: url('fonts/ChosunNm.woff') format('woff');
+}
+@font-face {
+    font-family: '조선굵은고딕';
+    src: url('fonts/ChosunKg.woff') format('woff');
+}
+
+@font-face {
+    font-family: '조선굵은명조';
+    src: url('fonts/ChosunKm.woff') format('woff');
+}

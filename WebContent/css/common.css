@@ -1,0 +1,729 @@
+@charset 'UTF-8';
+*{
+    box-sizing: border-box;
+}
+*::-webkit-scrollbar {
+    width: 5px;
+    display:none;
+}
+body{
+    background: #f1f1f1;
+    background-image: radial-gradient(circle,rgba(101, 74, 78, .1) 30%, transparent 0);
+    background-size: 3px 3px;
+    background-repeat: repeat;
+}
+a{
+    text-decoration: none;
+    color: #654a4e;
+}
+img{
+    outline: none;
+    display: block;
+}
+.inner{
+    width: 1100px;
+    position: relative;
+    margin: 0 auto;
+}
+.dflex{
+    display: flex;
+    align-items: center;
+}
+.btn{
+    min-width : 80px;
+    padding: 6px;
+    font-size: 13px;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+.btn--basic{
+    background: #654a4e;
+    border: 1px solid #654a4e;
+    color: #f1f1f1;
+}
+.btn--basic:hover{
+    background: #f1f1f1;
+    color: #654a4e;
+}
+.btn--reverse{
+    background: #f1f1f1;
+    border: 1px solid #654a4e;
+    color: #654a4e;
+}
+.btn--reverse:hover{
+    background: #654a4e;
+    color: #f1f1f1;
+}
+.btn--dark{
+    border:  1px solid #01333c;
+    background:#01333c;
+    color: #fff;
+}
+.btn--dark:hover{
+    background: #fff;
+    color: #01333c;
+}
+.btn--red{
+    background: #e50914;
+    border: 1px solid #e50914;
+    color: #f1f1f1;
+}
+.btn--red:hover{
+    background: #f1f1f1;
+    color: #e50914;
+}
+
+
+/* HEADER */
+header{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: #f1f1f1;
+    background-image: radial-gradient(circle,rgba(101, 74, 78, .1) 30%, transparent 0);
+    background-size: 3px 3px;
+    background-repeat: repeat;
+    z-index: 2;
+}
+header .inner{
+    height: 206px;
+    border-top: 6px solid #654a4e;
+    box-sizing: border-box;
+}
+header .inner .top-line{
+    width: 100%;
+    height: 160px;
+    border-bottom: 1px solid #654a4e;
+    justify-content: center;
+}
+header .inner .top-line .logo{
+    color: #654a4e;
+    font-family: '조선굵은명조', serif;
+    text-align: center;
+    margin-bottom: 10px;
+}
+header .inner .top-line .logo .main-logo{
+    font-size: 100px;
+    letter-spacing: 30px;
+}
+header .inner .top-line .logo .side-logo{
+    font-size: 30px;
+    letter-spacing: 25px;
+    padding-top: 6px;
+}
+header .inner .mid-line{
+    width: 100%;
+    height: 40px;
+    font-weight: 600;
+    justify-content: space-between;
+    font-family: '조선명조', serif;
+    letter-spacing: 1px;
+    border-bottom: 4px double #654a4e;
+}
+header .inner .mid-line .time-now{
+    font-size: 13px;
+}
+header .inner .mid-line .main-nav{
+    width: 500px;
+    height: 100%;
+    justify-content: space-between;
+}
+header .inner .mid-line .main-nav li a{
+    color: #654a4e;
+    padding: 4px 6px;
+    transition: background-color .3s, color .3s;
+}
+header .inner .mid-line .main-nav li a:hover{
+    background: #654a4e;
+    color: #f1f1f1;
+}
+header .inner .mid-line .write-form{
+    font-family: '에스코어드림B', sans-serif;
+    display: flex;
+}
+header .inner .mid-line .write-form .btn{
+    margin-left: 5px;
+}
+
+/* HEADLINE */
+.btm-line{
+    width: 100%;
+    font-size: 13px;
+    overflow: hidden;
+}
+.btm-line .inner{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #654a4e;
+}
+.btm-line .head-title{
+    background: #654a4e;
+    padding: 4px;
+    color: #f1f1f1;
+    margin:0 10px 0 5px;
+    border: 1px solid #01333c;
+    font-family: '조선굵은고딕', sans-serif;
+}
+.btm-line .head-context{
+    flex-grow: 1;
+    height: 15px;
+    font-weight: 600;
+    font-family: '조선명조', serif;
+    letter-spacing: 1px;
+    color: #f1f1f1;
+}
+
+/* NEWS-COMMON */
+.header-cate, .news-card .news-txt .news-cate{
+    background: #654a4e;
+    border: 1px solid #01333c;
+    color: #f1f1f1;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    padding: 4px 8px;
+    font-family: '조선굵은고딕', sans-serif;
+}
+.news-wrap{
+    margin: 20px 0;
+    display: grid;
+}
+.news-card{
+    cursor: pointer;
+    border: 1px solid #654a4e;
+}
+.news-card .news-pic{
+    position: relative;
+    background: #01333c;
+    width: 100%;
+    background: url(../img/nu_001.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    filter: grayscale(1);
+    transition: filter .5s;
+}
+.news-card .news-pic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.news-card:hover .news-pic{
+    filter: grayscale(0);
+}
+.news-card:hover .halftone{
+    opacity: 0;
+}
+.news-card .news-pic::after{
+    content: "";
+    position: absolute;
+    top:0;
+    left: -20%;
+    width: 10%;
+    height: 100%;
+    background: rgba(255, 255, 255, .2);
+    transform: skewX(-20deg);
+    filter: blur(10px);
+    transition: left .2s;
+}
+.news-card:hover .news-pic::after{
+    left: 115%;
+}
+.news-card .news-txt{
+    padding: 20px;
+    min-height: 80px;
+    transition: .2s;
+}
+.news-card .news-txt .news-tit{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: '조선명조', sans-serif;
+    line-height: 1.5;
+}
+.news-card .news-txt .news-txt-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: '조선굵은고딕', sans-serif;
+}
+.news-card .news-txt .news-txt-inner .news-author {
+    font-size: 12px;
+    color: #654a4e;
+    text-decoration: underline;
+}
+.news-card .news-txt .news-txt-inner .news-date{
+    font-size: 12px;
+    color: #654a4e;
+}
+.tit{
+    font-size: 30px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-family: '조선명조', sans-serif;
+}
+
+/* NEWS-MAIN */
+.news-main{
+    width: 100%;
+}
+.news-main .inner, .userInfo .inner{
+    min-height: 300px;
+}
+.news-main .news-wrap{
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(100px , auto);
+    gap: 20px;
+}
+.news-main .news-card .news-pic{
+    height: 303.75px;
+}
+
+/* VISUAL */
+.visual{
+    width: 100%;
+}
+.visual .inner{
+    height: 300px;
+    border:1px solid #654a4e;
+    padding: 8px;
+}
+.visual .inner .d-inner{
+    height: 100%;
+    border:1px dotted #654a4e;
+    padding: 20px;
+    font-size: 30px;
+    line-height: 1.5;
+    font-family: '조선명조', sans-serif;
+    font-weight: 600;
+}
+
+/* NEWS-CONTENT */
+.news-content{
+    width: 100%;
+}
+.news-content .inner{
+    min-height: 700px;
+}
+.news-content .news-wrap{
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px , auto);
+    gap: 20px;
+}
+.news-content .news-card .news-pic{
+    height: 198.73px;
+}
+
+/* NEWS-CONTENT DETAIL */
+.news-content .news-header{
+    padding: 20px 0;
+    border-bottom: 1px solid #654a4e;
+}
+.news-content .news-header .header-tit{
+    font-size: 40px;
+    font-family: '조선명조', sans-serif;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.news-content .news-header .header-info{
+    display: flex;
+    align-items: center;
+    font-family: '조선굵은고딕', sans-serif;
+}
+.news-content .news-header .header-info .hinfo{
+    position: relative;
+    margin-right: 20px;
+    font-size: 13px;
+}
+.news-content .news-header .header-info .hinfo:last-child{
+    margin-right: 0;
+}
+.news-content .news-header .header-info .hinfo::after{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: #654a4e;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    margin-left: 10px;
+}
+.news-content .news-header .header-info .hinfo:last-child::after{
+    display: none;
+}
+.news-content .news-context{
+    padding: 20px 0;
+}
+.news-content .news-context .news-img{
+    width: 550px;
+    height: auto;
+    margin-bottom: 30px;
+}
+.news-content .news-context .news-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+    transition: filter .4s;
+}
+.news-content .news-context .news-img:hover img{
+    filter: grayscale(0);
+}
+.news-content .news-context .news-text{
+    font-size: 16px;
+    line-height: 2;
+    margin-bottom: 20px;
+    font-family: '조선명조', sans-serif;
+    font-weight: 600;
+}
+.news-content .news-context .news-link{
+    background: #654a4e;
+    border: 1px solid #01333c;
+    padding: 8px;
+    display: inline-block;
+    font-size: 14px;
+    color: #f1f1f1;
+    font-family: '조선굵은고딕', sans-serif;
+}
+.news-content .news-context .news-link a{
+    text-decoration: underline;
+    transition: color .2s;
+    color: #f1f1f1;
+}
+.news-content .news-context .news-link:hover a{
+    text-decoration: underline;
+    color: #ccc;
+}
+.news-content .news-btns{
+    border-top: 1px solid #654a4e;
+    border-bottom: 4px double #654a4e;
+    padding: 20px 0;
+    justify-content: flex-end;
+    font-family: '에스코어드림R', sans-serif;
+}
+.news-content .news-btns .btn{
+    font-size: 16px;
+    margin: 5px;
+}
+
+/* WRITE */
+.write{
+    width: 100%;
+}
+.write .write-header{
+    width: 100%;
+    font-size: 40px;
+    font-weight: 600;
+    font-family: '조선명조', serif;
+}
+.write>.write-header>.inner{
+    border-bottom: 1px solid #654a4e;
+    padding: 50px 0;
+}
+.write>.inner{
+    min-height: 300px;
+}
+.write .write-news{
+    padding: 30px 0;
+}
+
+.write .write-news .form-wrap{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+.write .write-news .form-wrap label{
+    display: block;
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+    font-family: '조선명조', serif;
+    font-weight: 600;
+}
+.write .write-news .text-input{
+    width: 500px;
+    height: 30px;
+    font-size: 14px;
+    padding: 0 6px;
+    outline: none;
+    border: none;
+    border: 1px solid #654a4e;
+    color: #01333c;
+    background: #f1f1f1;
+    font-family: '조선굵은고딕', sans-serif;
+    transition: background-color .3s;
+}
+.write .write-news .text-area{
+    border: 1px solid #654a4e;
+    color: #01333c;
+    background: #f1f1f1;
+    resize: none;
+    width: calc(100% - 200px);
+    min-height: 200px;
+    padding: 10px;
+    outline: none;
+    font-family: '조선굵은고딕', sans-serif;
+    transition: background-color .3s;
+}
+.write .write-news .text-input:focus, .write .write-news .text-area:focus{
+    background: #e6ddde;
+}
+.write .write-news .select-input{
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    padding: 0 6px;
+    border: 1px solid #654a4e;
+    color: #01333c;
+    font-family: '조선굵은고딕', sans-serif;
+    background: #f1f1f1;
+    outline: none;
+}
+.write .write-news .file-input{
+    height: 25px;
+    outline: none;
+    border: 1px solid #654a4e;
+}
+.write .write-news .pic-view{
+    width: 320px;
+    height: 180px;
+    border: 1px solid #654a4e;
+    overflow: hidden;
+    margin-left: 200px;
+    background: url(../img/default.jpg);
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+.write .write-news .pic-view img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.write .form-wrap .valitation{
+    font-size: 13px;
+    font-weight: 600;
+    position: absolute;
+    left: 200px;
+    bottom: -20px;
+    color: #e50914;
+    font-family: '조선굵은고딕', sans-serif;
+}
+.write .write-news .btn-group{
+    display: flex;
+    justify-content: flex-end;
+}
+.write .write-news .btn-group .btn{
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 15px;
+    font-family: '에스코어드림R', sans-serif;
+}
+.write .write-news .btn-group .btn:first-child{
+    margin-left: 0;
+}
+
+/* FOOTER */
+footer{
+    width: 100%;
+    margin-top: 50px;
+}
+footer .inner{
+    border-top: 4px double #654a4e;
+    border-bottom: 6px solid #654a4e;
+    padding: 30px 0 40px 0;
+}
+footer .btn-group{
+    margin-bottom: 20px;
+    justify-content: center;
+}
+footer .btn-group .btn{
+    margin-right: 10px;
+    font-family: '에스코어드림R', sans-serif;
+}
+footer .btn-group .btn:last-child{
+    margin-right: 0;
+}
+footer .info{
+    font-size: 12px;
+    text-align: center;
+    color: #654a4e;
+    margin-bottom: 20px;
+    font-family: '조선명조', serif;
+    font-weight: 600;
+}
+footer .info span{
+    margin-right: 20px;
+    position: relative;
+}
+footer .info span:last-child{
+    margin-right: 0;
+}
+footer .copyright{
+    font-size: 12px;
+    border-top: 1px solid #654a4e;
+    color: #654a4e;
+    text-align: center;
+    padding-top: 20px;
+    font-family: '조선굵은고딕', sans-serif;
+}
+footer .copyright p{
+    margin-bottom: 10px;
+}
+
+/* LOGIN */
+#allwrap{
+    width: 100%;
+    height: 100vh;
+    background: url(../img/bg_login.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginBox{
+    width: 400px;
+    min-height: 250px;
+    background: #e6ddde;
+    border: 1px solid #654a4e;
+    padding: 40px;
+    position: relative;
+}
+.loginBox>.logo{
+    text-align: center;
+    font-weight: 600;
+    font-family: '조선굵은명조', serif;
+    color: #654a4e;
+}
+.loginBox>.logo>.main-logo{
+    font-size: 30px;
+    margin-bottom: 5px;
+    letter-spacing: 5px;
+}
+.loginBox>.logo>.side-logo{
+    font-size: 10px;
+    margin-bottom: 20px;
+    letter-spacing: 5.5px;
+}
+.loginBox .form-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+.loginBox .form-wrap label{
+    width: 80px;
+    font-family: '조선명조', serif;
+    font-weight: 600;
+}
+.loginBox .form-wrap .text-input{
+    width: 100%;
+    height: 30px;
+    font-size: 14px;
+    padding: 0 6px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #654a4e;
+    background: #e6ddde;
+    color: #01333c;
+    transition: border-bottom .2s, background-color .3s;
+    font-family: '조선굵은고딕', sans-serif;
+}
+.loginBox .form-wrap .valitation{
+    font-size: 12px;
+    position: absolute;
+    left: 70px;
+    bottom: -15px;
+    color: #e50914;
+    font-family: '조선굵은고딕', sans-serif;
+}
+.loginBox .btn-group{
+	margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginBox .btn-group .btn{
+    margin: 0 5px;
+    font-family: '에스코어드림R', sans-serif;
+}
+.login_error{
+    font-family: '에스코어드림R', sans-serif;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: #e50914;
+    text-align: center;
+    color: #f1f1f1;
+    padding-top: 7px;
+}
+
+/* OPEN SOURCE PAGE */
+.opsource{
+    width: 100%;
+}
+.opsource .inner{
+    min-height: 500px;
+}
+.opsource .inner .source{
+    margin: 20px 0;
+}
+.opsource .inner .source .subTit{
+    font-size: 16px;
+    margin: 10px 0 5px;
+    background: #654a4e;
+    color: #f1f1f1;
+    display: inline-block;
+    padding: 4px;
+    font-family: '조선굵은고딕', sans-serif;
+}
+.opsource .inner .source .sc_name{
+    font-size: 14px;
+    font-family: '에스코어드림B', sans-serif;
+    margin-bottom: 10px;
+}
+.opsource .inner .source .sc_link a{
+    display: inline-block;
+    font-family: '에스코어드림R', sans-serif;
+    text-decoration:underline;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+.opsource .inner .source .subCon {
+    font-family: '조선명조', serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+    border: 1px solid #ccc;
+    background: #e6ddde;
+    padding: 8px;
+}
+
+/* Halftone */
+.halftone {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-image: radial-gradient(circle,#654a4e 30%, transparent 0);
+    background-size: 3px 3px;
+    background-repeat: repeat;
+    mix-blend-mode: color-burn;
+    opacity: .2;
+    transition: opacity .5s;
+}
